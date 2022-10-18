@@ -62,6 +62,7 @@
     dest: "{{ kube_cert_compat_dir }}"
     state: link
     mode: 0755
+    force: yes
   when:
     - inventory_hostname in groups['k8s_cluster']
     - kube_cert_dir != kube_cert_compat_dir
